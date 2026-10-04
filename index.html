@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FrutaFlow — IA de animação</title>
+<style>
+:root{--bg:#07110d;--card:#0d1c15;--line:#203a2c;--text:#f3fff8;--muted:#9ab0a4;--green:#39e58c;--lime:#b9ff63;--purple:#8d6cff}
+*{box-sizing:border-box} body{margin:0;background:radial-gradient(circle at 80% 0,#153b29 0,#07110d 42%);color:var(--text);font-family:Inter,system-ui,Arial,sans-serif}
+nav{height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 6%;border-bottom:1px solid #173025;background:#07110dcc;backdrop-filter:blur(12px);position:sticky;top:0;z-index:5}
+.logo{font-weight:900;font-size:24px;letter-spacing:-1px}.logo span{color:var(--green)}
+.navlinks{display:flex;gap:26px;color:var(--muted);font-size:14px}.btn{border:0;border-radius:12px;padding:12px 18px;font-weight:800;cursor:pointer}.primary{background:linear-gradient(135deg,var(--green),var(--lime));color:#062012}.ghost{background:#102219;color:#eafff2;border:1px solid #234332}
+.hero{max-width:1100px;margin:0 auto;padding:78px 24px 40px;text-align:center}.pill{display:inline-flex;gap:8px;padding:8px 12px;border:1px solid #28563e;border-radius:999px;background:#0c2017;color:#b9ffd8;font-size:13px}.hero h1{font-size:clamp(42px,7vw,78px);line-height:.98;margin:22px auto 18px;max-width:850px;letter-spacing:-4px}.hero h1 em{font-style:normal;color:var(--green)}.hero p{max-width:680px;margin:auto;color:var(--muted);font-size:18px;line-height:1.6}.actions{margin-top:28px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.app{max-width:1100px;margin:45px auto 90px;padding:0 24px}.workspace{display:grid;grid-template-columns:1.05fr .95fr;gap:18px}.card{background:linear-gradient(180deg,#102219,#0b1812);border:1px solid var(--line);border-radius:20px;padding:20px;box-shadow:0 20px 70px #0006}.card h2{margin:0 0 5px;font-size:19px}.sub{color:var(--muted);font-size:13px;margin-bottom:18px}.drop{height:290px;border:1.5px dashed #3d7254;border-radius:16px;display:flex;align-items:center;justify-content:center;text-align:center;background:#09150f}.drop input{display:none}.drop strong{display:block;font-size:18px;margin-bottom:8px}.drop small{color:var(--muted)}.field{margin-top:16px}.field label{display:block;font-size:13px;font-weight:700;margin-bottom:8px}.field textarea,.field input[type=text]{width:100%;background:#08130e;border:1px solid #274334;color:white;border-radius:12px;padding:13px;outline:none;resize:vertical}.field textarea:focus,.field input:focus{border-color:var(--green)}.chips{display:flex;gap:8px;flex-wrap:wrap}.chip{padding:9px 11px;border-radius:10px;background:#11261b;border:1px solid #284b37;color:#ccebd8;font-size:12px;cursor:pointer}.chip.active{border-color:var(--green);color:#fff;background:#123c27}.generate{width:100%;margin-top:18px;padding:15px}.preview{min-height:590px;display:flex;flex-direction:column}.screen{flex:1;min-height:450px;border-radius:16px;background:linear-gradient(145deg,#111b16,#050806);border:1px solid #1e3427;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}.screen .orb{width:130px;height:130px;border-radius:45% 55% 60% 40%;background:linear-gradient(135deg,#42f39b,#a7ff52);filter:blur(1px);animation:float 3s ease-in-out infinite;box-shadow:0 0 80px #39e58c55}.screen .status{position:absolute;bottom:14px;left:14px;right:14px;background:#06100bcc;border:1px solid #244332;border-radius:12px;padding:10px;color:#b8d3c3;font-size:12px}.progress{height:5px;background:#17281e;border-radius:99px;overflow:hidden;margin-top:8px}.progress i{display:block;width:72%;height:100%;background:var(--green);animation:load 2s infinite}@keyframes float{50%{transform:translateY(-14px) rotate(5deg) scale(1.04)}}@keyframes load{0%{width:8%}70%{width:82%}100%{width:96%}}
+.features{max-width:1100px;margin:0 auto 100px;padding:0 24px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.feature{padding:22px;border:1px solid var(--line);border-radius:16px;background:#0b1812}.feature b{display:block;margin-bottom:8px}.feature span{color:var(--muted);font-size:13px;line-height:1.5}
+footer{border-top:1px solid var(--line);padding:28px 6%;color:#779182;font-size:12px;display:flex;justify-content:space-between}
+@media(max-width:800px){.workspace{grid-template-columns:1fr}.features{grid-template-columns:1fr}.navlinks{display:none}.hero h1{letter-spacing:-2px}.preview{min-height:520px}}
+</style>
+</head>
+<body>
+<nav><div class="logo">🍓 Fruta<span>Flow</span></div><div class="navlinks"><a>Início</a><a>Como funciona</a><a>Galeria</a><a>Preços</a></div><button class="btn primary" onclick="document.querySelector('#criar').scrollIntoView({behavior:'smooth'})">Criar animação</button></nav>
+
+<section class="hero">
+<div class="pill">✦ IA de imagem → vídeo + fala</div>
+<h1>Dê vida às suas fotos com a <em>FrutaFlow</em>.</h1>
+<p>Envie uma imagem, descreva o movimento e escreva a fala. A FrutaFlow transforma sua cena em uma animação pronta para compartilhar.</p>
+<div class="actions"><button class="btn primary" onclick="document.querySelector('#criar').scrollIntoView({behavior:'smooth'})">Começar agora →</button><button class="btn ghost" onclick="alert('Demonstração: envie uma foto e descreva a cena no painel abaixo.')">Ver demonstração</button></div>
+</section>
+
+<section class="app" id="criar">
+<div class="workspace">
+<div class="card">
+<h2>🎬 Criar animação</h2><div class="sub">Seu estúdio de criação com IA</div>
+<label class="drop" for="file"><div><strong>Arraste sua foto aqui</strong><small>ou toque para escolher uma imagem</small></div></label>
+<input id="file" type="file" accept="image/*" onchange="showFile(this)">
+<div id="filename" style="color:#9ab0a4;font-size:12px;margin-top:8px"></div>
+<div class="field"><label>O que deve acontecer?</label><textarea id="motion" rows="3" placeholder="Ex.: a personagem olha para a câmera, sorri e mexe os cabelos suavemente."></textarea></div>
+<div class="field"><label>O que ela deve falar?</label><textarea id="speech" rows="3" placeholder="Ex.: Eu descobri o segredo... e agora tudo vai mudar!"></textarea></div>
+<div class="field"><label>Estilo</label><div class="chips"><button class="chip active" onclick="pick(this)">Cinemático</button><button class="chip" onclick="pick(this)">Novela</button><button class="chip" onclick="pick(this)">Anime</button><button class="chip" onclick="pick(this)">3D</button></div></div>
+<button class="btn primary generate" onclick="generate()">✨ Gerar com FrutaFlow</button>
+</div>
+<div class="card preview">
+<h2>Prévia</h2><div class="sub">Sua animação aparecerá aqui</div>
+<div class="screen" id="screen"><div class="orb"></div><div class="status" id="status">Aguardando sua criação…</div></div>
+<div style="display:flex;justify-content:space-between;margin-top:12px;color:#9ab0a4;font-size:12px"><span>1080p • 9:16</span><span>FrutaFlow IA</span></div>
+</div>
+</div>
+</section>
+
+<section class="features">
+<div class="feature"><b>⚡ Animação por prompt</b><span>Descreva movimentos, expressões e câmera em linguagem natural.</span></div>
+<div class="feature"><b>🎙️ Fala sincronizada</b><span>Escreva a fala da personagem e prepare sua cena para dublagem.</span></div>
+<div class="feature"><b>♾️ Criação sem limites*</b><span>Interface pensada para um plano com geração ilimitada, sujeito à capacidade do serviço.</span></div>
+</section>
+<footer><span>© 2026 FrutaFlow</span><span>Feito para transformar histórias em cenas.</span></footer>
+
+<script>
+function pick(el){document.querySelectorAll('.chip').forEach(x=>x.classList.remove('active'));el.classList.add('active')}
+function showFile(input){document.getElementById('filename').textContent=input.files[0]?`Imagem selecionada: ${input.files[0].name}`:''}
+function generate(){
+ const m=document.getElementById('motion').value.trim(), s=document.getElementById('speech').value.trim();
+ const status=document.getElementById('status');
+ status.textContent='FrutaFlow está preparando a animação…';
+ setTimeout(()=>status.innerHTML='Gerando movimentos e fala…<div class="progress"><i></i></div>',700);
+ setTimeout(()=>status.textContent=`Prévia pronta — ${m?'movimento configurado':'adicione um movimento para uma geração mais precisa'}. ${s?'Fala configurada.':'Adicione uma fala se quiser dublagem.'}`,2600);
+}
+</script>
+</body>
+</html>
